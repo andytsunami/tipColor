@@ -44,7 +44,7 @@
 
 
 /*Balão*/
-.pinched::before {
+.balao::before {
     background: #000 none repeat scroll 0 0;
     content: "";
     height: 20px;
@@ -54,7 +54,7 @@
     top: -14px;
     width: 58px;
 }
-.pinched::after {
+.balao::after {
     background: #fff none repeat scroll 0 0;
     border-bottom-right-radius: 15px;
     content: "";
@@ -64,7 +64,7 @@
     top: -20px;
     width: 50%;
 }
-.pinched {
+.balao {
     background: #000 none repeat scroll 0 0;
     border-radius: 8px;
     color: #fff;
@@ -76,7 +76,7 @@
     width: 103px;
 }
 
-.pinched > *:first-child::before {
+.balao > *:first-child::before {
     background: #fff none repeat scroll 0 0;
     border-bottom-left-radius: 15px;
     content: "";
