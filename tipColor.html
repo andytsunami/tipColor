@@ -6,22 +6,30 @@
         <link rel="stylesheet" href="estilos.css">
         <script type="text/javascript" src="jquery-2.1.4.js"></script>
         <script type="text/javascript" src="tipColor.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#vitima').click(function(){
+                    alert('...');
+                });
+                $('.tipColor').tipColor(['#ccc'        ]);
+                $('.cor').click(function(){
+                    $('#vitima').css('background-color', '#666');
+                });
+
+            });
+        </script>
     </head>
     <body>
         <form id="form">
+            <div id="vitima"></div>
             <div id="container">
                 <label>Cor</label>
                 <input type="button" value="Click" class="tipColor"/>
-                
+                <!-- 
+                    Inspiração para o balão
+                    http://nicolasgallagher.com/pure-css-speech-bubbles/demo/
+                -->
                 <div class="balao">
-                    <div class="cor"></div>
-                    <div class="cor"></div>
-                    <div class="cor"></div>
-                    <div class="cor"></div>
-                    <div class="cor"></div>
-                    <div class="cor"></div>
-                    <div class="cor"></div>
-                    <div class="cor"></div>
                 </div>
             </div>
         </form>
