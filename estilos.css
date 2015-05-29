@@ -1,0 +1,91 @@
+.body, form{
+    width: 100%;
+    height: 100%;
+}
+
+#container{
+     margin-left: 50%;
+    margin-top: 20%;
+}
+
+.cor{
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    height: 20px;
+    width: 20px;
+}
+
+.cor:nth-child(1){
+    background-color: #FFFFFF;
+}
+.cor:nth-child(2){
+    background-color: #FF744F;
+}
+.cor:nth-child(3){
+    background-color: #FFA334;
+}
+.cor:nth-child(4){
+    background-color: #FFDC39;
+}
+.cor:nth-child(5){
+    background-color: #BAC7CB;
+}
+.cor:nth-child(6){
+    background-color: #41C2FC;
+}
+.cor:nth-child(7){
+    background-color: #19E9BA;
+}
+.cor:nth-child(8){
+    background-color: #9ADA5D;
+}
+
+
+/*Balão*/
+.pinched::before {
+    background: #000 none repeat scroll 0 0;
+    content: "";
+    height: 20px;
+    left: 55%;
+    margin: 0 0 0 -50px;
+    position: absolute;
+    top: -14px;
+    width: 58px;
+}
+.pinched::after {
+    background: #fff none repeat scroll 0 0;
+    border-bottom-right-radius: 15px;
+    content: "";
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: -20px;
+    width: 50%;
+}
+.pinched {
+    background: #000 none repeat scroll 0 0;
+    border-radius: 8px;
+    color: #fff;
+    height: 47px;
+    margin: 50px 0 10px;
+    padding: 6px;
+    position: relative;
+    text-align: center;
+    width: 103px;
+}
+
+.pinched > *:first-child::before {
+    background: #fff none repeat scroll 0 0;
+    border-bottom-left-radius: 15px;
+    content: "";
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    width: 50%;
+}
+p {
+    margin: 1em 0;
+}
