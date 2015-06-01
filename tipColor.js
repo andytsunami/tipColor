@@ -1,19 +1,47 @@
 (function($) {	
-	$.fn.tipColor = function( options ){
-        var settings = $.extend({
-            colors : ['#FFFFFF', '#FF744F', '#FFA334', '#FFDC39', '#BAC7CB', '#41C2FC', '#19E9BA', '#9ADA5D'],
-        }, options);        
-        
-        $.each(settings.colors,function(index,element){
-            //Por enquanto cria o balão na mão....
-            $('<div/>', {
-                'id':element+index,
-                'class':'cor',
-                'style': 'background-color:' + element,
-            }).appendTo('.balao');
+	$.fn.tipColor = function(color, target){
+        $(this).click(function(){
+           var idElement = $(this).attr('id');
+            console.log(idElement);
+            var settings = $.extend({
+                colors : color.length > 0 ? color : ['#FFFFFF', '#FF744F', '#FFA334', '#FFDC39', '#BAC7CB', '#41C2FC', '#19E9BA', '#9ADA5D'],
+            });
             
+            if(!$(this).hasClass('populado')){
+                
+             $('<div/>', {
+                'id' : 'balao-' + idElement,
+                'class' : 'balao',
+            }).insertAfter(this);
+            
+            $.each(settings.colors,function(index,element){
+                $('<div/>', {
+                    'id':idElement + '-' +element,
+                    'class':'cor',
+                    'style': 'background-color:' + element,
+                    'data-balao' : 'balao-' + idElement,
+                }).appendTo('#balao-' + idElement);
+
+            });
+
+            if(settings.colors.length < 9){
+                   $('.balao').css('width','103px');   
+            }
+                
+            $(this).addClass('populado');
+                
+            }
+            
+            $('.cor').click(function(){
+                $(target).css('background-color', $(this).css('background-color'));
+                idAlvo = '#'+$(this).attr('data-balao');
+                console.log('Removendo ' + idAlvo);
+                $('#'+ idAlvo.split('-')[1]).removeClass('populado');
+                $(idAlvo).remove();
+            });
         });
     };
+    
 	
 })(jQuery);
 
