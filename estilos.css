@@ -17,7 +17,6 @@
     margin-top: -19%;
 }
 
-
 /*O elemento mesmo*/
 .cor{
     border: 1px solid black;
@@ -80,14 +79,12 @@
     border-radius: 8px;
     color: #fff;
     margin: 22px 0 10px;
-    padding: 6px;
-    position: relative;
+    padding: 6px 0 2px;
+    position: absolute;
     text-align: center;
     min-width: 103px;
     min-height: 47px;
     max-width: 500px;
-    padding-left: 0;
-    padding-right: 0;
     clear: both;
 }
 
