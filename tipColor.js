@@ -1,5 +1,5 @@
 (function($) {	
-	$.fn.tipColor = function(color, target){
+	$.fn.tipColor = function(color, target, options){
         $(this).click(function(){
            var idElement = $(this).attr('id');
             console.log(idElement);
@@ -33,11 +33,21 @@
             }
             
             $('.cor').click(function(){
-                $(target).css('background-color', $(this).css('background-color'));
+                var cor = $(this).css('background-color');
+
+                $(target).css('background-color', cor);
                 idAlvo = '#'+$(this).attr('data-balao');
                 console.log('Removendo ' + idAlvo);
                 $('#'+ idAlvo.split('-')[1]).removeClass('populado');
                 $(idAlvo).remove();
+                
+                if($.isFunction(options.onSelect)){
+                    
+                dec = cor.split('rgb(')[1].replace(')', '').split(',');
+                hex = '#'+Number(dec[0]).toString(16)+Number(dec[1]).
+                toString(16)+Number(dec[2]).toString(16);
+                    options.onSelect(target,hex.toUpperCase());
+                }
             });
         });
     };
