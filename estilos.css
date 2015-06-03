@@ -54,25 +54,17 @@
 
 
 /*Balão*/
-.balao::before {
-    background: #000 none repeat scroll 0 0;
-    content: "";
-    height: 20px;
-    left: 55%;
-    margin: 0 0 0 -50px;
-    position: absolute;
-    top: -14px;
-    width: 58px;
-}
 .balao::after {
-    background: #fff none repeat scroll 0 0;
-    border-bottom-right-radius: 15px;
+    border-color: #000 transparent;
+    border-style: solid;
+    border-width: 0 15px 15px;
+    bottom: 80px;
     content: "";
-    height: 20px;
-    left: 0;
+    display: block;
+    left: 50px;
     position: absolute;
-    top: -20px;
-    width: 50%;
+    top: -13px;
+    width: 0;
 }
 .balao {
     background: #000 none repeat scroll 0 0;
@@ -86,18 +78,4 @@
     min-height: 47px;
     max-width: 500px;
     clear: both;
-}
-
-.balao > *:first-child::before {
-    background: #fff none repeat scroll 0 0;
-    border-bottom-left-radius: 15px;
-    content: "";
-    height: 20px;
-    position: absolute;
-    right: 0;
-    top: -20px;
-    width: 50%;
-}
-p {
-    margin: 1em 0;
 }
