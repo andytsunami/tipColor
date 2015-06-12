@@ -46,10 +46,18 @@
                 
                 if($.isFunction(options.onSelect)){
                     
-                dec = cor.split('rgb(')[1].replace(')', '').split(',');
-                hex = '#'+Number(dec[0]).toString(16)+Number(dec[1]).
-                toString(16)+Number(dec[2]).toString(16);
-                    options.onSelect(target,hex.toUpperCase());
+                corRetorno = '';
+                    
+                    if(options.rgb){
+                        corRetorno = cor;
+                    } else {
+                        dec = cor.split('rgb(')[1].replace(')', '').split(',');
+                        hex = '#'+Number(dec[0]).toString(16)+Number(dec[1]).
+                        toString(16)+Number(dec[2]).toString(16);
+                        corRetorno = hex.toUpperCase();
+                    }            
+                
+                    options.onSelect(target,corRetorno);
                 }
             });
         });
