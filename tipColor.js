@@ -12,10 +12,13 @@
             }
             
             if(!$(this).hasClass('populado')){
+                left = ($(this).position().left + ($(this).width() / 2 ) - 50);
+                top = $(this).position().top;
                 
              $('<div/>', {
                 'id' : 'balao-' + idElement,
                 'class' : 'balao',
+                'style' : 'z-index:99999;left:' + left + 'px;top:' + top + 'px',
             }).insertAfter(this);
             
             $.each(settings.colors,function(index,element){
