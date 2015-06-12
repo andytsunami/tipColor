@@ -72,7 +72,7 @@
     color: #fff;
     margin: 22px 0 10px;
     padding: 6px 0 2px;
-    position: absolute;
+    position: fixed;
     text-align: center;
     min-width: 103px;
     min-height: 47px;
